@@ -8,58 +8,56 @@
 import SwiftUI
 import UserNotifications
 
+@main
+struct pushApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         registerForPushNotifications()
         print("registered")
+        
         getNotificationSettings()
-
+        
         return true
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
+        
         print("Device Token: \(token)")
     }
-
+    
     func application(
-      _ application: UIApplication,
-      didFailToRegisterForRemoteNotificationsWithError error: Error
-    ) {
-      print("Failed to register: \(error)")
-    }
-}
-
-@main
-struct pushApp: App {
-    // inject into SwiftUI life-cycle via adaptor !!!
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
-    let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
+        _ application: UIApplication,
+        didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
     }
 }
 
 func registerForPushNotifications() {
-  UNUserNotificationCenter.current()
-    .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
-      print("Permission granted: \(granted)")
-    }
+    UNUserNotificationCenter.current()
+        .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+            print("Permission granted: \(granted)")
+        }
 }
 
 func getNotificationSettings() {
-  UNUserNotificationCenter.current().getNotificationSettings { settings in
-//    print("Notification settings: \(settings)")
-      
-    guard settings.authorizationStatus == .authorized else { return }
-    DispatchQueue.main.async {
-        UIApplication.shared.registerForRemoteNotifications()
+    UNUserNotificationCenter.current().getNotificationSettings { settings in
+        print("Notification settings: \(settings)")
+        
+        guard settings.authorizationStatus == .authorized else { return }
+        DispatchQueue.main.async {
+            UIApplication.shared.registerForRemoteNotifications()
+        }
     }
-  }
 }
