@@ -11,8 +11,6 @@
 		DB8AF5BF28AD10720095BBB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF5BE28AD10720095BBB9 /* ContentView.swift */; };
 		DB8AF5C128AD10740095BBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8AF5C028AD10740095BBB9 /* Assets.xcassets */; };
 		DB8AF5C428AD10740095BBB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8AF5C328AD10740095BBB9 /* Preview Assets.xcassets */; };
-		DB8AF5C628AD10740095BBB9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF5C528AD10740095BBB9 /* Persistence.swift */; };
-		DB8AF5C928AD10740095BBB9 /* push.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF5C728AD10740095BBB9 /* push.xcdatamodeld */; };
 		DB8AF5D328AD10740095BBB9 /* pushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF5D228AD10740095BBB9 /* pushTests.swift */; };
 		DB8AF5DD28AD10740095BBB9 /* pushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF5DC28AD10740095BBB9 /* pushUITests.swift */; };
 		DB8AF5DF28AD10740095BBB9 /* pushUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AF5DE28AD10740095BBB9 /* pushUITestsLaunchTests.swift */; };
@@ -41,8 +39,6 @@
 		DB8AF5BE28AD10720095BBB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB8AF5C028AD10740095BBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB8AF5C328AD10740095BBB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DB8AF5C528AD10740095BBB9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		DB8AF5C828AD10740095BBB9 /* push.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = push.xcdatamodel; sourceTree = "<group>"; };
 		DB8AF5CE28AD10740095BBB9 /* pushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8AF5D228AD10740095BBB9 /* pushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pushTests.swift; sourceTree = "<group>"; };
 		DB8AF5D828AD10740095BBB9 /* pushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,8 +99,6 @@
 				DB8AF5BC28AD10720095BBB9 /* pushApp.swift */,
 				DB8AF5BE28AD10720095BBB9 /* ContentView.swift */,
 				DB8AF5C028AD10740095BBB9 /* Assets.xcassets */,
-				DB8AF5C528AD10740095BBB9 /* Persistence.swift */,
-				DB8AF5C728AD10740095BBB9 /* push.xcdatamodeld */,
 				DB8AF5C228AD10740095BBB9 /* Preview Content */,
 			);
 			path = push;
@@ -265,8 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB8AF5C628AD10740095BBB9 /* Persistence.swift in Sources */,
-				DB8AF5C928AD10740095BBB9 /* push.xcdatamodeld in Sources */,
 				DB8AF5BF28AD10720095BBB9 /* ContentView.swift in Sources */,
 				DB8AF5BD28AD10720095BBB9 /* pushApp.swift in Sources */,
 			);
@@ -595,19 +587,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DB8AF5C728AD10740095BBB9 /* push.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DB8AF5C828AD10740095BBB9 /* push.xcdatamodel */,
-			);
-			currentVersion = DB8AF5C828AD10740095BBB9 /* push.xcdatamodel */;
-			path = push.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DB8AF5B128AD10720095BBB9 /* Project object */;
 }
